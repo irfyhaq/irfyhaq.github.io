@@ -70,16 +70,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = ( strcmp(ENVIRONMENT, 'production') === 0 )? 'default': 'dev';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['dev'] = array(
 	'dsn'	=> '',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => APPPATH.'/database/data.db',
-	'dbdriver' => 'sqlite3',
+	'hostname' => 'localhost',
+	'username' => 'postgres',
+	'password' => 'irfan',
+	'database' => 'taskin',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => TRUE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -92,6 +92,30 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE,
+	'port' => 5432
+);
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'ec2-54-221-244-196.compute-1.amazonaws.com',
+	'username' => 'gkhoytxqyssnkm',
+	'password' => 'b86203e8e4d1d4b0a3e9f9f1baa7b377bb27c77dab597dc8ee82d09254ab6e47',
+	'database' => 'db6g9r9p23bfiv',
+	'dbdriver' => 'postgre',
+	'dbprefix' => '',
+	'pconnect' => TRUE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE,
+	'port' => 5432
 );
 
