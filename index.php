@@ -64,13 +64,13 @@ date_default_timezone_set('Asia/Kolkata');
 			define('ENVIRONMENT', 'development');
 			define('BASE_URL', 'http://localhost:8888/tasker');
 			break;
-		case "commendify.com":
+		case "irfyhaq.github.io":
 			define('ENVIRONMENT', 'production'); // explicit definition
-			define('BASE_URL', 'http://commendify.com/');
+			define('BASE_URL', 'https://irfyhaq.github.io');
 			break;
 		default:
 			define('ENVIRONMENT', 'production');
-			define('BASE_URL', 'http://commendify.com');
+			define('BASE_URL', 'https://irfyhaq.github.io');
 			break;
 	}
 
