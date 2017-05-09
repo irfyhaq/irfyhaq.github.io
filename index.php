@@ -64,13 +64,13 @@ date_default_timezone_set('Asia/Kolkata');
 			define('ENVIRONMENT', 'development');
 			define('BASE_URL', 'http://localhost:8888/taskin');
 			break;
-		case "taskin.heroku.com":
+		case "taskin.herokuapp.com":
 			define('ENVIRONMENT', 'production'); // explicit definition
-			define('BASE_URL', 'http://taskin.heroku.com');
+			define('BASE_URL', 'https://taskin.herokuapp.com');
 			break;
 		default:
 			define('ENVIRONMENT', 'production');
-			define('BASE_URL', 'http://taskin.heroku.com');
+			define('BASE_URL', 'https://taskin.herokuapp.com');
 			break;
 	}
 
