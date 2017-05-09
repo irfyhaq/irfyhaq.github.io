@@ -58,11 +58,11 @@ date_default_timezone_set('Asia/Kolkata');
 	switch($_SERVER["HTTP_HOST"]){
 		case "localhost":
 			define('ENVIRONMENT', 'development');
-			define('BASE_URL', 'http://localhost/tasker');
+			define('BASE_URL', 'http://localhost/irfyhaq.github.io');
 		   	break;
 		case "localhost:8888":
 			define('ENVIRONMENT', 'development');
-			define('BASE_URL', 'http://localhost:8888/tasker');
+			define('BASE_URL', 'http://localhost:8888/irfyhaq.github.io');
 			break;
 		case "irfyhaq.github.io":
 			define('ENVIRONMENT', 'production'); // explicit definition
