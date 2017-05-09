@@ -64,13 +64,13 @@ date_default_timezone_set('Asia/Kolkata');
 			define('ENVIRONMENT', 'development');
 			define('BASE_URL', 'http://localhost:8888/taskin');
 			break;
-		case "irfyhaq.github.io":
+		case "taskin.heroku.com":
 			define('ENVIRONMENT', 'production'); // explicit definition
-			define('BASE_URL', 'https://irfyhaq.github.io');
+			define('BASE_URL', 'http://taskin.heroku.com');
 			break;
 		default:
 			define('ENVIRONMENT', 'production');
-			define('BASE_URL', 'https://irfyhaq.github.io');
+			define('BASE_URL', 'http://taskin.heroku.com');
 			break;
 	}
 
