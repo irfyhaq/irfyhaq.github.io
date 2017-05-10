@@ -23,6 +23,7 @@ class User extends CI_Controller {
 
     public function login()
     {   
+        // Check the accessibility of a User
         if($this->session->userdata('is_logged_in')){
             $url = base_url().'task';
             redirect($url);
@@ -46,7 +47,7 @@ class User extends CI_Controller {
                     );
                     $this->session->sess_expiration = 60*60*24*2;
                     $this->session->set_userdata($data);
-                    // Explicitly defining this variable to remove index.php by passing it directly
+                    // Explicitly defining this variable to remove index.php from URI by passing it directly
                     $url = base_url().'task';
                     redirect($url);
                 } else {
@@ -82,6 +83,8 @@ class User extends CI_Controller {
                     $user_name = strtolower($this->input->post('username'));
                     $password = $this->input->post('pass');
                     $createUser = $this->users->createUser($user_name, $password);
+                    
+                    //Creating Session for new User before Redirecting to Home Page
                     $data = array(
                         'username' => $user_name,
                         'is_logged_in' => true,

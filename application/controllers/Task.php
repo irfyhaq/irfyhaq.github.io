@@ -9,6 +9,8 @@ class Task extends CI_Controller {
 
         $this->load->helper('form');
         $this->load->model('tasks');
+
+        // Only accessible to logged in Users
         if(!$this->session->userdata('is_logged_in')){
             $url = base_url().'user';
             redirect($url);
@@ -44,6 +46,7 @@ class Task extends CI_Controller {
     }  
     
 
+    // Add New Task
     public function add()
     {
         $this->load->library('form_validation');
@@ -65,6 +68,7 @@ class Task extends CI_Controller {
         }
     }
 
+    //Function to edit an existing task
     public function edit($id=null){
         if($id){
             $data['task'] = $this->tasks->getTaskById($id);
